@@ -79,65 +79,20 @@ public class MethodsSet {
     // Реализация этого метода мне оооочень не нравится, но я не знаю как его оптимизировать. Дело в том, что я не знаю как
     // получить доступ к общим полям (полям родителя) без приведения типа от Object к конкретному классу
     // Подскажите, пожалуйста как можно оптимизировать?
-    public String compareStudent(Object student1, Object student2) {
-        Integer magicPower1 = -1;
-        Integer transgressingDistance1 = -1;
-        Integer magicPower2 = -1;
-        Integer transgressingDistance2 = -1;
-        String name1, name2, response;
-
-        if (student1 instanceof Griffindor) {
-            magicPower1 = ((Griffindor) student1).getMagicPower();
-            transgressingDistance1 = ((Griffindor) student1).getTransgressingDistance();
-            name1 = ((Griffindor) student1).getFirstName() + " " + ((Griffindor) student1).getSecondName();
-        } else if (student1 instanceof Puffenduy) {
-            magicPower1 = ((Puffenduy) student1).getMagicPower();
-            transgressingDistance1 = ((Puffenduy) student1).getTransgressingDistance();
-            name1 = ((Puffenduy) student1).getFirstName() + " " + ((Puffenduy) student1).getSecondName();
-        } else if (student1 instanceof Kogtevran) {
-            magicPower1 = ((Kogtevran) student1).getMagicPower();
-            transgressingDistance1 = ((Kogtevran) student1).getTransgressingDistance();
-            name1 = ((Kogtevran) student1).getFirstName() + " " + ((Kogtevran) student1).getSecondName();
-        } else if (student1 instanceof Slizerin) {
-            magicPower1 = ((Slizerin) student1).getMagicPower();
-            transgressingDistance1 = ((Slizerin) student1).getTransgressingDistance();
-            name1 = ((Slizerin) student1).getFirstName() + " " + ((Slizerin) student1).getSecondName();
+    public void compareStudent(Hogwarts student1, Hogwarts student2) {
+        if (student1.getMagicPower() > student2.getMagicPower()) {
+            System.out.println(student1.getFirstName() + " " + student1.getSecondName() + " обладает большей мощностью магии, " +
+                    "чем " + student2.getFirstName() + " " + student2.getSecondName());
         } else {
-            return "Студент не учится в Хогвартсе";
+            System.out.println(student2.getFirstName() + " " + student2.getSecondName() + " обладает большей мощностью магии, " +
+                    "чем " + student1.getFirstName() + " " + student1.getSecondName());
         }
-
-        if (student2 instanceof Griffindor) {
-            magicPower2 = ((Griffindor) student2).getMagicPower();
-            transgressingDistance2 = ((Griffindor) student2).getTransgressingDistance();
-            name2 = ((Griffindor) student2).getFirstName() + " " + ((Griffindor) student2).getSecondName();
-        } else if (student2 instanceof Puffenduy) {
-            magicPower2 = ((Puffenduy) student2).getMagicPower();
-            transgressingDistance2 = ((Puffenduy) student2).getTransgressingDistance();
-            name2 = ((Puffenduy) student2).getFirstName() + " " + ((Puffenduy) student2).getSecondName();
-        } else if (student2 instanceof Kogtevran) {
-            magicPower2 = ((Kogtevran) student2).getMagicPower();
-            transgressingDistance2 = ((Kogtevran) student2).getTransgressingDistance();
-            name2 = ((Kogtevran) student2).getFirstName() + " " + ((Kogtevran) student2).getSecondName();
-        } else if (student2 instanceof Slizerin) {
-            magicPower2 = ((Slizerin) student2).getMagicPower();
-            transgressingDistance2 = ((Slizerin) student2).getTransgressingDistance();
-            name2 = ((Slizerin) student2).getFirstName() + " " + ((Slizerin) student2).getSecondName();
+        if (student1.getTransgressingDistance() > student2.getTransgressingDistance()) {
+            System.out.println(student1.getFirstName() + " " + student1.getSecondName() + " обладает большим расстоянием трансгрессии, " +
+                    "чем " + student2.getFirstName() + " " + student2.getSecondName());
         } else {
-            return "Студент не учится в Хогвартсе";
+            System.out.println(student2.getFirstName() + " " + student2.getSecondName() + " обладает большим расстоянием трансгрессии, " +
+                    "чем " + student1.getFirstName() + " " + student1.getSecondName());
         }
-
-        if (magicPower1 > magicPower2) {
-            response = name1 + " обладает большей мощностью магии, чем " + name2;
-        } else {
-            response = name2 + " обладает большей мощностью магии, чем " + name1;
-        }
-        response += '\n';
-        if (transgressingDistance1 > transgressingDistance2) {
-            response += name1 + " обладает большей способностью трансгрессировать на какое-то расстояние, чем " + name2;
-        } else {
-            response += name2 + " обладает большей способностью трансгрессировать на какое-то расстояние, чем " + name1;
-        }
-
-        return response;
     }
 }
