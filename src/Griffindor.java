@@ -11,18 +11,6 @@ public class Griffindor extends Hogwarts {
         this.courage = courage;
     }
 
-    public Integer getNobility() {
-        return nobility;
-    }
-
-    public Integer getHonor() {
-        return honor;
-    }
-
-    public Integer getCourage() {
-        return courage;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "У студента присутствуют такие качества, как:" + '\n' +

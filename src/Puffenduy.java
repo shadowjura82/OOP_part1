@@ -11,18 +11,6 @@ public class Puffenduy extends Hogwarts {
         this.honest = honest;
     }
 
-    public Integer getHardworking() {
-        return hardworking;
-    }
-
-    public Integer getLoyal() {
-        return loyal;
-    }
-
-    public Integer getHonest() {
-        return honest;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "У студента присутствуют такие качества, как:" + '\n' +

@@ -15,26 +15,6 @@ public class Slizerin extends Hogwarts {
         this.lustForPower = lustForPower;
     }
 
-    public Integer getCunning() {
-        return cunning;
-    }
-
-    public Integer getDetermination() {
-        return determination;
-    }
-
-    public Integer getAmbition() {
-        return ambition;
-    }
-
-    public Integer getResourcefulness() {
-        return resourcefulness;
-    }
-
-    public Integer getLustForPower() {
-        return lustForPower;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "У студента присутствуют такие качества, как:" + '\n' +

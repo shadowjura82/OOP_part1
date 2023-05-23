@@ -13,22 +13,6 @@ public class Kogtevran extends Hogwarts {
         this.creativity = creativity;
     }
 
-    public Integer getSmart() {
-        return smart;
-    }
-
-    public Integer getWise() {
-        return wise;
-    }
-
-    public Integer getWitty() {
-        return witty;
-    }
-
-    public Integer getCreativity() {
-        return creativity;
-    }
-
     @Override
     public String toString() {
         return super.toString() + "У студента присутствуют такие качества, как:" + '\n' +
